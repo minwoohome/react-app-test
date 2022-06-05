@@ -15,11 +15,11 @@ script: # 실행할 스크립트
 
 deploy:
   provider: elasticbeanstalk # 외부 서비스 표시(s3, elasticbeanstalk, firebase 등등)
-  region: "ap-northeast-2" # aws 리전
-  app: "docker-react-app-aws" # Elastic BeanStalk application 이름
-  env: "Dockerreactappaws-env" # Elastic BeanStalk > All applications > Environments
-  bucket_name: "elasticbeanstalk-ap-northeast-2-984774476028" # Elastic BeanStalk 에서 사용중인 s3버킷이름
-  bucket_path: "docker-react-app-aws" # 애플리케이션 이름과 동일하게 넣으면 된다. 파일이 저장될 경로
+  region: ap-northeast-2 # aws 리전
+  app: docker-react-app-aws # Elastic BeanStalk application 이름
+  env: Dockerreactappaws-env # Elastic BeanStalk > All applications > Environments
+  bucket_name: elasticbeanstalk-ap-northeast-2-984774476028 # Elastic BeanStalk 에서 사용중인 s3버킷이름
+  bucket_path: docker-react-app-aws # 애플리케이션 이름과 동일하게 넣으면 된다. 파일이 저장될 경로
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY_ID
