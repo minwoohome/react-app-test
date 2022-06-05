@@ -1,0 +1,14 @@
+sudo: required # 관리자 권한 갖기
+language: generic # 언어(플랫폼)을 선택 -> 뭐지 generic이
+services: # 도커환경구성
+	- docker
+
+before_install: # 스크립트 실행할 수 있는 환경구성
+	- echo "start creating image with 도커파일"
+	- docker build -t docker-react-app -f Dockerfile.dev
+
+script: # 실행할 스크립트
+	- docker run -e CI=true docker-react-app yarn run test -- --coverage
+
+after_suceess:
+	- echo "Test Success"
