@@ -1,5 +1,5 @@
 sudo: required # 관리자 권한 갖기
-language: node_js # 언어(플랫폼)을 선택 -> 뭐지 generic이
+language: generic # 언어(플랫폼)을 선택 -> 뭐지 generic이
 branches:
   only:
     - main
