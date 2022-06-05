@@ -4,14 +4,14 @@ branches:
   only:
     - main
 services: # 도커환경구성
-	- docker
+  - docker
 
 before_install: # 스크립트 실행할 수 있는 환경구성
-	- echo "start creating image with 도커파일"
-	- docker build -t docker-react-app -f Dockerfile.dev
+  - echo "start creating image with 도커파일"
+  - docker build -t docker-react-app -f Dockerfile.dev
 
 script: # 실행할 스크립트
-	- docker run -e CI=true docker-react-app yarn run test -- --coverage
+  - docker run -e CI=true docker-react-app yarn run test -- --coverage
 
 after_suceess:
-	- echo "Test Success"
+  - echo "Test Success"
