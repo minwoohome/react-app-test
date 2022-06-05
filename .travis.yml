@@ -22,6 +22,8 @@ deploy:
   bucket_path: "docker-react-app-aws" # 애플리케이션 이름과 동일하게 넣으면 된다. 파일이 저장될 경로
   on:
     branch: main
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
 
 after_suceess:
   - echo "Test Success"
